@@ -64,7 +64,7 @@ class MockPlanner:
             "target_runtime_s": 62, "shot_count": 8,
             "aspect_ratios": ["16:9", "9:16"],
             "style": {"block": "Cinematic naturalistic Ethiopian home interior, warm dawn light, restrained earthy palette."},
-            "narration_voice": {"model": "gemini-tts", "voice": "Kore"},
+            "narration_voice": {"model": "gemini-3.8-flash-tts", "voice": "Kore"},
             "subtitle_language": subtitle_language,
             "logline": f"A quiet gathering around an Ethiopian coffee ceremony reveals how ritual, memory and hospitality connect generations. Inspired by: {idea[:250]}",
             "ai_disclosure": {"in_film": True, "end_card_text": "Some visuals and/or audio in this film were created with AI tools."},

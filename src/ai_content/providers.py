@@ -23,7 +23,7 @@ class ProviderConfig:
     video_command: str = ''
     video_worker_url: str = ''
     video_worker_token: str = ''
-    music_command: str = ''
+    music_command: str = 'python scripts/local_music_worker.py --input {input_json} --output {output}'
     output_dir: str = 'outputs'
     request_timeout_s: int = 180
 
@@ -130,9 +130,18 @@ class GeminiTTSProvider(SpeechProvider):
         for term,pronunciation in (lexicon or {}).items():
             # Inline pronunciation hints without changing the visible subtitle text.
             spoken=spoken.replace(term,pronunciation)
-        url=f'https://generativelanguage.googleapis.com/v1beta/models/{model or self.c.gemini_tts_model}:generateContent'
-        payload={'contents':[{'role':'user','parts':[{'text':spoken,'speechMetadata':{'style':style_prompt or self.c.gemini_tts_style}}]}],
-                 'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'languageCode':language,'voiceConfig':{'voice':voice or self.c.gemini_tts_voice}}}}
+        target_model=model or self.c.gemini_tts_model
+        url=f'https://generativelanguage.googleapis.com/v1beta/models/{target_model}:generateContent'
+        style=style_prompt or self.c.gemini_tts_style
+        part_obj={'text':spoken}
+        if target_model.endswith('-tts') and style:
+            part_obj['speechMetadata']={'style':style}
+        voice_name=voice or self.c.gemini_tts_voice
+        speech_cfg={'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice_name}}}
+        if language:
+            speech_cfg['languageCode']=language
+        payload={'contents':[{'role':'user','parts':[part_obj]}],
+                 'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':speech_cfg}}
         result=_post_json(url,payload,{'x-goog-api-key':self.c.gemini_api_key},self.c.request_timeout_s)
         try:
             part=result['candidates'][0]['content']['parts'][0]['inlineData']
@@ -218,7 +227,7 @@ class GeminiTextPlanner:
           "subtitle_en, transition. Use fictional characters, no real-person likenesses. Make total duration 60-90s, "
           "Amharic narration when requested, accurate concise English subtitles, and instrumental music. Music must include 3-5 timed cues tied to valid shot IDs (fade_in, swell, drop, fade_out), with notes that track the emotional arc. Keep music instrumental with no lyrics or vocals.\n"
           f"Title: {title}\nNarration language: {language}\nSubtitle language: {subtitle_language}\nIdea: {idea}")
-        url=f'https://generativelanguage.googleapis.com/v1beta/models/{os.getenv("GEMINI_TEXT_MODEL","gemini-3.8-flash")}:generateContent'
+        url=f'https://generativelanguage.googleapis.com/v1beta/models/{os.getenv("GEMINI_TEXT_MODEL","gemini-3.8-flash-tts")}:generateContent'
         from .observability import log_model_call
         result=log_model_call(Path(self.c.output_dir).parent/'runs.jsonl',stage='story_planning',provider='Google Gemini',model=os.getenv('GEMINI_TEXT_MODEL','gemini-3.8-flash'),inputs={'idea':idea,'title':title,'language':language,'subtitle_language':subtitle_language},output=None,call=lambda:_post_json(url,{'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json'}},{'x-goog-api-key':self.c.gemini_api_key},self.c.request_timeout_s))
         try:
@@ -227,7 +236,7 @@ class GeminiTextPlanner:
         except Exception as exc: raise ProviderError(f'Gemini did not return valid storyboard JSON: {str(result)[:1000]}') from exc
     def repair(self,storyboard:dict,issues:list[str],*,idea:str)->dict[str,Any]:
         if not self.c.gemini_api_key: raise ProviderError('Set GEMINI_API_KEY')
-        url=f'https://generativelanguage.googleapis.com/v1beta/models/{os.getenv("GEMINI_TEXT_MODEL","gemini-3.8-flash")}:generateContent'
+        url=f'https://generativelanguage.googleapis.com/v1beta/models/{os.getenv("GEMINI_TEXT_MODEL","gemini-3.8-flash-tts")}:generateContent'
         prompt='Repair this storyboard JSON. Fix only these validation issues and preserve all other content. Return JSON only.\nIssues:'+json.dumps(issues)+'\nStoryboard:'+json.dumps(storyboard,ensure_ascii=False)
         from .observability import log_model_call
         result=log_model_call(Path(self.c.output_dir).parent/'runs.jsonl',stage='story_repair',provider='Google Gemini',model=os.getenv('GEMINI_TEXT_MODEL','gemini-3.8-flash'),inputs={'issues':issues,'storyboard':storyboard},output=None,call=lambda:_post_json(url,{'contents':[{'parts':[{'text':prompt}]}],'generationConfig':{'responseMimeType':'application/json'}},{'x-goog-api-key':self.c.gemini_api_key},self.c.request_timeout_s))

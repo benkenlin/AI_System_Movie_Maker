@@ -48,7 +48,7 @@ class FilmAssembler:
                 normalized.append(base)
                 # Per-shot vertical crop uses the storyboard's horizontal focal point.
                 v=Path(td)/f'{shot.id}_vertical.mp4'; x=shot.vertical_crop_x
-                vf=f"scale={self.width}:{self.vertical_height}:force_original_aspect_ratio=increase,crop={self.height}:{self.width}:x='(in_w-out_w)*{x}':y=(in_h-out_h)/2,setsar=1,fps=24,tpad=stop_mode=clone:stop_duration={segment_total},format=yuv420p"
+                vf=f"scale=-2:{self.width}:force_original_aspect_ratio=increase,crop={self.height}:{self.width}:x='max(0,min(iw-{self.height},(iw-{self.height})*{x}))':y=0,setsar=1,fps=24,tpad=stop_mode=clone:stop_duration={segment_total},format=yuv420p"
                 _run(['ffmpeg','-y','-i',str(clip),'-vf',vf,'-t',str(segment_total),'-an','-c:v','libx264','-preset','ultrafast',str(v)])
                 vertical.append(v)
             srt.write_text('\n'.join(entries),encoding='utf-8')
@@ -67,10 +67,10 @@ class FilmAssembler:
             self._join_video(vertical,storyboard.shots,segment_durations,vvideo)
             voice=Path(td)/'voice.wav'; concat(voice_parts,voice)
             outputs={}
-            for label,video,subtitle_style in [('horizontal',hvideo,f'FontSize={self.subtitle_scale},MarginV={max(12,self.subtitle_scale)}'),('vertical',vvideo,f'FontSize={max(8,int(self.subtitle_scale*.82))},MarginV={max(20,self.subtitle_scale*2)}')]:
+            for label,video,subtitle_style in [('horizontal',hvideo,f'Alignment=2,FontSize={max(8, int(self.subtitle_scale * 0.78))},MarginV={max(10, int(self.subtitle_scale * 0.55))}'),('vertical',vvideo,f'FontSize={max(8,int(self.subtitle_scale*.82))},MarginV={max(20,self.subtitle_scale*2)}')]:
                 out=assembled/f'{label}.mp4'; subtitle_filter=f"subtitles={srt.as_posix()}:force_style='{subtitle_style}',tpad=stop_mode=clone:stop_duration=3,drawbox=x=0:y=0:w=iw:h=ih:color=black:t=fill:enable='gte(t,{cursor})',drawtext=textfile={end_card.as_posix()}:fontcolor=white:fontsize={self.subtitle_scale}:x=(w-text_w)/2:y=(h-text_h)/2:enable='gte(t,{cursor})'"
                 if music and music.exists():
-                    _run(['ffmpeg','-y','-i',str(video),'-i',str(voice),'-stream_loop','-1','-i',str(music),'-filter_complex',f"[2:a]volume=0.22[m];[m][1:a]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[duck];[1:a][duck]amix=inputs=2:duration=first:weights=1 0.8[mix];[mix]apad,loudnorm=I=-16:TP=-1.5:LRA=11[a]",'-vf',subtitle_filter,'-map','0:v','-map','[a]','-t',str(cursor+3),'-c:v','libx264','-preset','ultrafast','-c:a','aac','-movflags','+faststart',str(out)])
+                    _run(['ffmpeg','-y','-i',str(video),'-i',str(voice),'-stream_loop','-1','-i',str(music),'-filter_complex',f"[2:a]volume=1.4[m];[m][1:a]sidechaincompress=threshold=0.06:ratio=3.5:attack=30:release=400:makeup=1.2[duck];[1:a][duck]amix=inputs=2:duration=first:weights=1.0 1.25:normalize=0[mix];[mix]apad,loudnorm=I=-16:TP=-1.5:LRA=11[a]",'-vf',subtitle_filter,'-map','0:v','-map','[a]','-t',str(cursor+3),'-c:v','libx264','-preset','ultrafast','-c:a','aac','-movflags','+faststart',str(out)])
                 else:
                     _run(['ffmpeg','-y','-i',str(video),'-i',str(voice),'-vf',subtitle_filter,'-map','0:v','-map','1:a','-t',str(cursor+3),'-c:v','libx264','-c:a','aac','-af','apad,loudnorm=I=-16:TP=-1.5:LRA=11','-movflags','+faststart',str(out)])
                 outputs[label]=out

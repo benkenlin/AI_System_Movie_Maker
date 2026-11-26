@@ -12,3 +12,4 @@ consent_registry.json
 model_licenses.json
 private/
 *.sqlite3
+*.pyc
