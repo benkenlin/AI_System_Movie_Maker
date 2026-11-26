@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: ai-content-system
+Version: 1.0.0
+Summary: A deterministic, storyboard-driven AI filmmaking pipeline.
+Requires-Python: >=3.11
+Requires-Dist: pydantic<3,>=2.8
+Requires-Dist: python-dotenv>=1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Provides-Extra: web
+Requires-Dist: streamlit>=1.38; extra == "web"
+Provides-Extra: workers
+Requires-Dist: fastapi>=0.115; extra == "workers"
+Requires-Dist: uvicorn[standard]>=0.30; extra == "workers"
+Requires-Dist: python-multipart>=0.0.9; extra == "workers"
+Provides-Extra: all
+Requires-Dist: pytest>=8.0; extra == "all"
+Requires-Dist: streamlit>=1.38; extra == "all"
+Requires-Dist: fastapi>=0.115; extra == "all"
+Requires-Dist: uvicorn[standard]>=0.30; extra == "all"
+Requires-Dist: python-multipart>=0.0.9; extra == "all"

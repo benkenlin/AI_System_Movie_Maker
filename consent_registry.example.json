@@ -1,0 +1,10 @@
+{
+  "example-consent-001": {
+    "subject_reference": "internal-consent-record-id",
+    "scope": ["synthetic depiction", "film publication"],
+    "granted_at": "YYYY-MM-DD",
+    "expires_at": null,
+    "release_allowed": false,
+    "evidence_location": "private/consent/example-consent-001.pdf"
+  }
+}

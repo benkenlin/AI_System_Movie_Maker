@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "storyboard_version": 1,
+  "title": "The Last Coffee Ceremony",
+  "language": "am",
+  "subtitle_language": "en",
+  "logline": "A young woman rediscovers her grandmother's stories through a quiet coffee ceremony.",
+  "ai_disclosure": {
+    "in_film": true,
+    "end_card_text": "Created with AI tools"
+  },
+  "characters": {
+    "grandmother": {
+      "descriptor": "Fictional Ethiopian grandmother in her seventies, wearing a white cotton netela shawl, warm lined face.",
+      "ref_sheet": "outputs/refs/grandmother.png",
+      "origin": "fictional"
+    },
+    "granddaughter": {
+      "descriptor": "Fictional Ethiopian woman in her twenties, simple contemporary clothing, thoughtful expression.",
+      "ref_sheet": "outputs/refs/granddaughter.png",
+      "origin": "fictional"
+    }
+  },
+  "music": {
+    "prompt": "Instrumental Ethiopian-inspired acoustic score, warm krar and soft hand percussion, reflective opening, hopeful ending.",
+    "instrumental": true,
+    "duration_s": 64,
+    "candidates": [],
+    "selected": null,
+    "rationale": ""
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "duration_s": 7,
+      "image_prompt": "Wide establishing view of a quiet Ethiopian home courtyard at sunrise, coffee setup visible.",
+      "motion_prompt": "gentle slow push-in",
+      "characters": [
+        "granddaughter"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "እንደ ተለመደው ጠዋት በቡና ሽታ ተጀመረ።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The morning began, as always, with the smell of coffee."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "The morning began, as always, with the smell of coffee."
+    },
+    {
+      "id": "s02",
+      "duration_s": 7,
+      "image_prompt": "Close view of coffee beans being roasted in a traditional pan over charcoal.",
+      "motion_prompt": "subtle handheld drift, rising smoke",
+      "characters": [
+        "grandmother"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "አያቴ ሁልጊዜ በቡና ማቁላት ትጀምር ነበር።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "My grandmother always began by roasting the coffee."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "My grandmother always began by roasting the coffee."
+    },
+    {
+      "id": "s03",
+      "duration_s": 8,
+      "image_prompt": "Grandmother prepares the jebena beside small cups, warm window light.",
+      "motion_prompt": "slow lateral camera move",
+      "characters": [
+        "grandmother"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "እያንዳንዱ ስኒ ታሪክ ይይዛል ትለኝ ነበር።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "She used to tell me that every cup held a story."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "She used to tell me that every cup held a story."
+    },
+    {
+      "id": "s04",
+      "duration_s": 8,
+      "image_prompt": "Granddaughter sits opposite her grandmother and listens carefully.",
+      "motion_prompt": "gentle push-in toward their hands",
+      "characters": [
+        "granddaughter",
+        "grandmother"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "በዚያ ቀን አንድ ታሪክ እንድትነግረኝ ጠየቅኋት።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "That day, I asked her to tell me one of those stories."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "That day, I asked her to tell me one of those stories."
+    },
+    {
+      "id": "s05",
+      "duration_s": 8,
+      "image_prompt": "Grandmother smiles while holding a small coffee cup, intimate portrait.",
+      "motion_prompt": "very slow push-in",
+      "characters": [
+        "grandmother"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "ስለ ትዕግሥት፣ ስለ ሥራ እና ከእኛ በፊት ስለነበሩት ሰዎች አወራች።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "She spoke of patience, work, and those who came before us."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "She spoke of patience, work, and those who came before us."
+    },
+    {
+      "id": "s06",
+      "duration_s": 8,
+      "image_prompt": "Close-up of two hands passing a small coffee cup across a low table.",
+      "motion_prompt": "slow focus shift from cup to hands",
+      "characters": [
+        "grandmother",
+        "granddaughter"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "ማዳመጥም ማስታወስ እንደሆነ ተረዳሁ።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "I understood that listening is also a way of remembering."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "I understood that listening is also a way of remembering."
+    },
+    {
+      "id": "s07",
+      "duration_s": 8,
+      "image_prompt": "The two women sit together in the courtyard as afternoon light softens.",
+      "motion_prompt": "slow pull-back",
+      "characters": [
+        "grandmother",
+        "granddaughter"
+      ],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "የቡናው ሥነ ሥርዓት ተጠናቀቀ፤ ታሪኩ ግን ከእኔ ጋር ቀረ።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The ceremony ended, but the story stayed with me."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "The ceremony ended, but the story stayed with me."
+    },
+    {
+      "id": "s08",
+      "duration_s": 8,
+      "image_prompt": "A quiet still life of the jebena and cups in golden evening light.",
+      "motion_prompt": "gentle final pull-back and hold",
+      "characters": [],
+      "vertical_crop_x": 0.5,
+      "narration": {
+        "text": "ባህሎች ሲካፈሉ ይኖራሉ።",
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "Traditions live on when we share them."
+      },
+      "transition": "crossfade",
+      "camera": "push_in",
+      "subtitle_en": "Traditions live on when we share them."
+    }
+  ],
+  "target_runtime_s": 62,
+  "shot_count": 8,
+  "aspect_ratios": [
+    "16:9",
+    "9:16"
+  ],
+  "style": {
+    "block": "Cinematic naturalistic Ethiopian home interior, warm dawn light, earthy palette, realistic film grain."
+  },
+  "narration_voice": {
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Kore"
+  }
+}

@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+outputs/
+*.log
+.DS_Store
+.env.*
+!.env.example
+consent_registry.json
+model_licenses.json
+private/
+*.sqlite3

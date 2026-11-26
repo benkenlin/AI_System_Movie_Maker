@@ -1,0 +1,44 @@
+{
+  "release_reviewed": false,
+  "reviewer": "",
+  "reviewed_at": "",
+  "output_rights_reviewed": false,
+  "models": {
+    "image": {
+      "provider": "Cloudflare Workers AI / Black Forest Labs",
+      "model": "@cf/black-forest-labs/flux-2-klein-9b",
+      "license": "Review the model-specific terms linked from the Cloudflare model page and Black Forest Labs terms before release.",
+      "source_url": "https://developers.cloudflare.com/workers-ai/models/flux-2-klein-9b/",
+      "reviewed": false,
+      "commercial_use_reviewed": false,
+      "notes": "Cloudflare identifies this as a partner-hosted model. Confirm the exact model terms and generated-output rights for your use case."
+    },
+    "video": {
+      "provider": "Wan-AI",
+      "model": "Wan2.2-TI2V-5B (record exact checkpoint revision)",
+      "license": "Apache-2.0 (verify the exact downloaded checkpoint and repository revision)",
+      "source_url": "https://huggingface.co/Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "reviewed": false,
+      "commercial_use_reviewed": false,
+      "notes": "The model card identifies Apache-2.0; record the actual checkpoint/revision used."
+    },
+    "music": {
+      "provider": "ACE-Step",
+      "model": "ACE-Step 1.5 (record exact DiT and LM checkpoint revisions)",
+      "license": "MIT (verify exact code and model-weight terms for the selected checkpoint files)",
+      "source_url": "https://github.com/ace-step/ACE-Step-1.5",
+      "reviewed": false,
+      "commercial_use_reviewed": false,
+      "notes": "Review both the project license and the licenses/terms attached to each downloaded weight."
+    },
+    "tts": {
+      "provider": "Google",
+      "model": "gemini-3.8-flash-tts",
+      "license": "Google Gemini API terms and applicable service-specific terms (review current version)",
+      "source_url": "https://ai.google.dev/gemini-api/terms",
+      "reviewed": false,
+      "commercial_use_reviewed": false,
+      "notes": "Review current API data-use, output, retention and commercial-use terms for the account/region."
+    }
+  }
+}

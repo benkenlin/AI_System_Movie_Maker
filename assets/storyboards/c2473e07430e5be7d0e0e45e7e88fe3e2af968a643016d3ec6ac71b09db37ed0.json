@@ -1,0 +1,205 @@
+{
+  "ai_disclosure": {
+    "end_card_text": "Some visuals and/or audio in this film were created with AI tools.",
+    "in_film": true
+  },
+  "aspect_ratios": [
+    "16:9",
+    "9:16"
+  ],
+  "characters": {
+    "guests": {
+      "descriptor": "A small group of fictional family members and neighbours of varied adult ages, seated respectfully together during the ceremony.",
+      "origin": "fictional"
+    },
+    "host": {
+      "descriptor": "A fictional Ethiopian elder hosting a traditional coffee ceremony, wearing modest culturally appropriate clothing; warm, calm and attentive.",
+      "origin": "fictional"
+    }
+  },
+  "language": "am",
+  "logline": "A quiet gathering around an Ethiopian coffee ceremony reveals how ritual, memory and hospitality connect generations. Inspired by: An intimate Ethiopian coffee ceremony brings three generations together through memory, hospitality and shared stories.",
+  "music": {
+    "candidates": [],
+    "duration_s": 69,
+    "instrumental": true,
+    "prompt": "Gentle, warm instrumental underscore with restrained Ethiopian-inspired acoustic textures; avoid imitating a specific living artist or copyrighted recording.",
+    "rationale": "",
+    "selected": null
+  },
+  "narration_voice": {
+    "model": "gemini-tts",
+    "voice": "Kore"
+  },
+  "schema_version": "1.0",
+  "shot_count": 8,
+  "shots": [
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s01",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. Dawn light enters the home; dust floats in a warm beam. Story beat: Establish the quiet morning and the home where the ceremony begins. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The morning begins in familiar quiet.",
+        "text": "ጥዋቱ በተለመደው ጸጥታ ይጀምራል።"
+      },
+      "subtitle_en": "The morning begins in familiar quiet.",
+      "transition": "crossfade",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s02",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. Close view of hands arranging the jebena, cups and tray. Story beat: Introduce the elder preparing the coffee tools. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "Every object has its place, and every movement has meaning.",
+        "text": "እያንዳንዱ ዕቃ ቦታው አለው፤ እያንዳንዱም እንቅስቃሴ ትርጉም አለው።"
+      },
+      "subtitle_en": "Every object has its place, and every movement has meaning.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s03",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. Beans are washed, then stirred in a shallow roasting pan. Story beat: Show the washing and roasting of the green coffee beans. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The green coffee beans are washed and slowly roasted over the fire.",
+        "text": "አረንጓዴዎቹ የቡና ፍሬዎች ታጥበው በእሳት ላይ ቀስ በቀስ ይቆላሉ።"
+      },
+      "subtitle_en": "The green coffee beans are washed and slowly roasted over the fire.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s04",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. The roaster lifts the pan; guests lean in to appreciate the aroma. Story beat: Reveal the aroma as the roasted beans are shared with guests. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The aroma fills the room and draws everyone together.",
+        "text": "መዓዛው ቤቱን ሞልቶ ሁሉንም ወደ አንድነት ይሰበስባል።"
+      },
+      "subtitle_en": "The aroma fills the room and draws everyone together.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s05",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. Steam rises from the clay pot as guests sit in a circle. Story beat: Show water heating in the jebena while guests settle together. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "As the water warms in the jebena, stories begin to flow.",
+        "text": "በጀበናው ውስጥ ውሃው ሲሞቅ፣ ወሬና ታሪኮች ይጀምራሉ።"
+      },
+      "subtitle_en": "As the water warms in the jebena, stories begin to flow.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s06",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. A thin stream of coffee fills a small cup; it is offered respectfully. Story beat: Pour the first cup carefully and offer it to a guest. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The first cup is served with care and respect.",
+        "text": "የመጀመሪያው ሲኒ በጥንቃቄና በአክብሮት ይቀርባል።"
+      },
+      "subtitle_en": "The first cup is served with care and respect.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 7,
+      "id": "s07",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. Faces listen and smile; hands pass cups around the circle. Story beat: Let conversation and connection become the emotional centre. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "For a moment, the family shares one table and one story.",
+        "text": "ለአፍታ ሁሉም ቤተሰብ በአንድ ጠረጴዛ ዙሪያ አንድ ታሪክ ይጋራል።"
+      },
+      "subtitle_en": "For a moment, the family shares one table and one story.",
+      "transition": "cut",
+      "vertical_crop_x": 0.5
+    },
+    {
+      "camera": "push_in",
+      "characters": [
+        "host",
+        "guests"
+      ],
+      "duration_s": 13,
+      "id": "s08",
+      "image_prompt": "Cinematic, respectful Ethiopian coffee ceremony scene. The camera gently pulls back from the cups and glowing room. Story beat: End on the coffee set and the gathering continuing in warmth. Natural warm light, realistic details, consistent fictional characters, no text.",
+      "motion_prompt": "Slow, stable cinematic camera movement; subtle natural gestures; preserve character and prop continuity.",
+      "narration": {
+        "lang": "am",
+        "lexicon": {},
+        "subtitle_text": "The ceremony ends, but the bond it creates remains.",
+        "text": "ሥነ ሥርዓቱ ይጠናቀቃል፤ የፈጠረው ትስስር ግን ይቀጥላል።"
+      },
+      "subtitle_en": "The ceremony ends, but the bond it creates remains.",
+      "transition": "crossfade",
+      "vertical_crop_x": 0.5
+    }
+  ],
+  "storyboard_version": 1,
+  "style": {
+    "block": "Cinematic naturalistic Ethiopian home interior, warm dawn light, restrained earthy palette."
+  },
+  "subtitle_language": "en",
+  "target_runtime_s": 62,
+  "title": "The Last Coffee Ceremony"
+}
